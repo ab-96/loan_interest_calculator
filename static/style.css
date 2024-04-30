@@ -5,7 +5,14 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: red;
+    color: #0D6895;
+}
+
+.container {
+    display: flex; 
+    justify-content: center;  
+    align-items: center;  
+    flex-direction: column;
 }
 
 label {
@@ -22,8 +29,9 @@ input[type="date"] {
     margin-bottom: 10px;
 }
 
-button[type="submit"] {
-    background-color: #4CAF50;
+button[type="submit"],
+button[type="reset"] {
+    background-color: #0D6895;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -31,7 +39,11 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-.total-interest {
+button[type="reset"] {
+    background-color: #18a09b; /* Clear button color */
+}
+
+
+#total-interest-due {
     font-weight: bold;
-    margin-top: 20px;
 }
