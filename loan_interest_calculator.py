@@ -80,7 +80,6 @@ def calculate_total_interest(landAdvance, monthly_rate, defaultPeriodStart, defa
     return round(total_interest)
 
 
-#When 
 
 
 
