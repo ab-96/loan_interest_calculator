@@ -6,8 +6,6 @@ def calculate_total_interest(landAdvance, monthly_rate, defaultPeriodStart, defa
     # start of the loan
     dateOfloan = datetime.date(2023, 1, 15)
     
-    
- 
     # fee that will be added to the landAdvancement
     arrangementFee = 5000
 
@@ -77,19 +75,24 @@ def calculate_total_interest(landAdvance, monthly_rate, defaultPeriodStart, defa
          # Move to the next day
         current_date += datetime.timedelta(days=1)
         
-        print(accrured_daily_interest)
+        # print(accrured_daily_interest)
 
-    return total_interest
-
-
-default_period_start_str = "29-Mar-2024"
-default_period_end_str = "28-Apr-2024"
-
-default_period_start = datetime.datetime.strptime(
-    default_period_start_str, "%d-%b-%Y").date()
-default_period_end = datetime.datetime.strptime(
-    default_period_end_str, "%d-%b-%Y").date()
+    return round(total_interest)
 
 
-print(calculate_total_interest(300000, 0.5,
-      defaultPeriodStart=default_period_start, defaultPeriodEnd=default_period_end))
+#When 
+
+
+
+
+# default_period_start_str = "24-Mar-2024"
+# default_period_end_str = "23-Apr-2024"
+
+# default_period_start = datetime.datetime.strptime(
+#     default_period_start_str, "%d-%b-%Y").date()
+# default_period_end = datetime.datetime.strptime(
+#     default_period_end_str, "%d-%b-%Y").date()
+
+
+# print(calculate_total_interest(100000, 0.8,
+#       defaultPeriodStart=default_period_start, defaultPeriodEnd=default_period_end))
