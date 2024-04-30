@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Loan Interest Calculator</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Loan Interest Calculator</h1>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <form method="POST" action="/">
-            <label for="landAdvance">Land Advance:</label>
-            <input type="number" id="landAdvance" name="landAdvance">
-            <br>
-            <label for="monthlyRate">Monthly Rate (%):</label>
-            <input type="number" step="0.01" id="monthlyRate" name="monthlyRate">
-            <br>
-            <label for="defaultPeriodStart">Default Period Start</label>
-            <input type="date" id="defaultPeriodStart" name="defaultPeriodStart">
-            <br>
-            <label for="defaultPeriodEnd">Default Period End</label>
-            <input type="date" id="defaultPeriodEnd" name="defaultPeriodEnd">
-            <br>
+        <div class="container-heading">
+            <h1>Loan Interest Calculator</h1>
+        </div>
+      <form method="POST" action="/">
+        <label for="landAdvance">Land Advance:</label>
+        <input type="number" id="landAdvance" name="landAdvance" />
+        <br />
+        <label for="monthlyRate">Monthly Rate (%):</label>
+        <input type="number" step="0.01" id="monthlyRate" name="monthlyRate" />
+        <br />
+        <label for="defaultPeriodStart">Default Period Start</label>
+        <input type="date" id="defaultPeriodStart" name="defaultPeriodStart" />
+        <br />
+        <label for="defaultPeriodEnd">Default Period End</label>
+        <input type="date" id="defaultPeriodEnd" name="defaultPeriodEnd" />
+        <br />
+        <div class="container-button">
             <button type="submit">Calculate Interest</button>
             <button type="reset">Clear</button>
-        </form>
+        </div>
 
-        {% if total_interest is not none %}
-            <p id="total-interest-due">Total Interest Due: {{ total_interest }}</p>
-        {% endif %}
+      </form>
+
+      {% if total_interest is not none %}
+      <p id="total-interest-due">Total Interest Due: {{ total_interest }}</p>
+      {% endif %}
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const clearButton = document.querySelector('button[type="reset"]');
-            clearButton.addEventListener('click', () => {
-                document.getElementById("landAdvance").value = "";
-                document.getElementById("monthlyRate").value = "";
-                document.getElementById("defaultPeriodStart").value = "";
-                document.getElementById("defaultPeriodEnd").value = "";
-                const totalInterestDueElement = document.querySelector('#total-interest-due');
-                totalInterestDueElement.textContent = '';
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const clearButton = document.querySelector('button[type="reset"]');
+        clearButton.addEventListener("click", () => {
+          document.getElementById("landAdvance").value = "";
+          document.getElementById("monthlyRate").value = "";
+          document.getElementById("defaultPeriodStart").value = "";
+          document.getElementById("defaultPeriodEnd").value = "";
+          const totalInterestDueElement = document.querySelector(
+            "#total-interest-due"
+          );
+          totalInterestDueElement.textContent = "";
+          totalInterestDueElement.style.display = "none";
         });
+      });
     </script>
-    
-</body>
-
-
+  </body>
 </html>
-

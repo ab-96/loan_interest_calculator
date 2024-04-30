@@ -2,6 +2,7 @@ import datetime
 
 
 def calculate_total_interest(landAdvance, monthly_rate, defaultPeriodStart, defaultPeriodEnd):
+    
 
     # start of the loan
     dateOfloan = datetime.date(2023, 1, 15)
