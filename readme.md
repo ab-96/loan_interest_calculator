@@ -1,4 +1,4 @@
-# Avamore Junior Software Developer Test
+# Loan Interest Calculator 
 
 The task is to develop an interest calculator.
 
@@ -16,6 +16,7 @@ Users should be able to:
 - CSS
 - Python 3
 - [Flask](https://reactjs.org/) - Python framework 
+- JavaScript
 
 ## Author
 
