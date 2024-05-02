@@ -10,7 +10,7 @@ This Loan Interest Calculator helps you determine the total interest owed on a l
 
 Users should be able to:
 
-- Users can enter the loan amount, interest rate, and loan status through a user-friendly form.
+- Users can enter the loan amount, interest rate, and the default period through a user-friendly form.
 - The calculator calculates the total interest based on the entered information, including a penalty rate for defaulted loans.
 - Users can view the calculated total interest amount.
 
@@ -19,9 +19,16 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS
-- Python 3
-- [Flask](https://reactjs.org/) - Python framework 
+- Python 
+- Flask
 - JavaScript
+
+## Installation
+To run this project locally, follow these steps:
+- Clone this repository using `git clone`
+- Navigate to the root directory
+- Run the app with this command: `flask run`
+- Click on the link provided in the terminal 
 
 ## Author
 
