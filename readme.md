@@ -15,7 +15,6 @@ Users should be able to:
 - Users can view the calculated total interest amount.
 
 ![Interest Calculator](assets/interest-calculator.jpeg)
-
 ### Built with
 
 - Semantic HTML5 markup
