@@ -90,14 +90,22 @@
     </script>
 
     <script>
-      const defaultPeriodStartInput = document.getElementById("defaultPeriodStart");
+      const defaultPeriodStartInput =
+        document.getElementById("defaultPeriodStart");
       flatpickr(defaultPeriodStartInput);
       const defaultPeriodEndInput = document.getElementById("defaultPeriodEnd");
       flatpickr(defaultPeriodEndInput);
 
       const form = document.querySelector("form");
       form.addEventListener("submit", function (event) {
-    
+
+        const landAdvanceInput = document.getElementById("landAdvance");
+        const monthlyRateInput = document.getElementById("monthlyRate");
+
+        if (landAdvanceInput.value === "" || monthlyRateInput.value === "") {
+          event.preventDefault(); // Prevent form submission
+          alert("Please fill out the form before submitting");
+        }
       });
     </script>
   </body>

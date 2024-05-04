@@ -29,7 +29,7 @@ h1 {
     height: 650px;
     align-items: center;  
     flex-direction: column;
-    border: 1px solid #0D6895;
+    /* border: 1px solid #0D6895; */
     border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -68,11 +68,6 @@ button[type="reset"] {
     width: 200px;
     height:60px;
     font-size: 12px;
-}
-
-button[type="reset"] {
-    /* background-color: #18a09b; Clear button color */
-    background
 }
 
 
