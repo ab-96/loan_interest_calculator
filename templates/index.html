@@ -26,10 +26,18 @@
       </div>
       <form method="POST" action="/">
         <div class="output-box">
+    
           {% if total_interest is not none %}
 
           <p>Total Interest Due:</p>
           <p id="total-interest-due">{{ total_interest }}</p>
+
+          {% else %}
+
+          <p id="total-interest-due">
+           
+          </p>
+
           {% endif %}
         </div>
         <label for="landAdvance"></label>
@@ -98,14 +106,44 @@
 
       const form = document.querySelector("form");
       form.addEventListener("submit", function (event) {
-
         const landAdvanceInput = document.getElementById("landAdvance");
         const monthlyRateInput = document.getElementById("monthlyRate");
 
-        if (landAdvanceInput.value === "" || monthlyRateInput.value === "") {
+        if (
+          landAdvanceInput.value === "" || monthlyRateInput.value === "") {
           event.preventDefault(); // Prevent form submission
           alert("Please fill out the form before submitting");
         }
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch("/", {
+          // Existing route for form submission
+          method: "post",
+          body: formData,
+        })
+          .then((response) => {
+            // No need to parse JSON, server renders full template
+            return response.text(); // Get the rendered HTML
+          })
+          .then((html) => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+
+            // Extract total interest from rendered HTML
+            const totalInterestElement = doc.querySelector(
+              "#total-interest-due"
+            );
+            const totalInterest = totalInterestElement.textContent;
+
+            // Update the UI with the extracted total interest
+            const clientTotalInterestDueElement = document.querySelector(
+              "#total-interest-due"
+            );
+            clientTotalInterestDueElement.textContent = totalInterest;
+            clientTotalInterestDueElement.style.display = "block";
+          });
       });
     </script>
   </body>
