@@ -14,7 +14,13 @@ Users should be able to:
 - The calculator calculates the total interest based on the entered information, including a penalty rate for defaulted loans.
 - Users can view the calculated total interest amount.
 
+### Screenshot
+
 ![Interest Calculator](assets/interest-calculator.jpeg)
+
+### Links
+
+- [Live Site URL](https://loan-interest-calculator.onrender.com/)
 ### Built with
 
 - Semantic HTML5 markup
